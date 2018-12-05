@@ -231,8 +231,6 @@ LIGHT_CYAN_BG="\[\e[106m\]"
 # Clear formatting
 END_LINE='\[\e[00m\]'
 STOP_COLORS="\e[m"
-END_PROMPT="\[\e[0m\]"
-
 
 
 
@@ -243,16 +241,16 @@ END_PROMPT="\[\e[0m\]"
 BLACK_WHITE_GRAY_PS1="$WHITE_FG$LIGHT_GRAY_BG\u@\h$END_LINE\n  $BLACK_BG$WHITE_FG[\w]$END_LINE$ "
 RED_COMMANDO_PS1="$RED_FG$WHITE_BG\u (Shell v\v)$END_LINE\n  $BLACK_BG$WHITE_FG[\w]$END_LINE$ "
 EMONK_PS1="$STOP_COLORS|$PURPLE_BOLD_FG\t$STOP_COLORS\u$CYAN_BOLD_FG$STOP_COLORS@$CYAN_BOLD_FG\h$STOP_COLORS:$END_LINE$GREEN_BOLD_FG[\W]> $END_LINE"
-LOTS_O_INFO_PS1="\n$PURPLE_FG\$(/bin/date)\n$GREEN_FG\w\n$RED_BOLD_FG\u@\h: $BLUE_BOLD_FG\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): $CYAN_BOLD_FG\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files $YELLOW_BOLD_FG\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b$END_PROMPT -> $END_PROMPT"
+LOTS_O_INFO_PS1="\n$PURPLE_FG\$(/bin/date)\n$GREEN_FG\w\n$RED_BOLD_FG\u@\h: $BLUE_BOLD_FG\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): $CYAN_BOLD_FG\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files $YELLOW_BOLD_FG\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b$END_LINE -> $END_LINE"
 CLEAN_COLORS_PS1="$PURPLE_FG\t\[$STOP_COLORS\]-$CYAN_FG\u\[$STOP_COLORS\]@$GREEN_FG\h:$BLUE_BOLD_FG\w\[$STOP_COLORS\]\$ "
-FULL_PATH_PS1="$GREEN_FG[\w]$END_PROMPT\n$CYAN_BOLD_FG\u$GREEN_BOLD_FG-> $END_PROMPT"
+FULL_PATH_PS1="$GREEN_FG[\w]$END_LINE\n$CYAN_BOLD_FG\u$GREEN_BOLD_FG-> $END_LINE"
 JOBS_PS1="$BLACK_BG$GREEN_BOLD_FG\u@\H:$LIGHT_GRAY_BOLD_FG\w$STOP_COLORS\n$PURPLE_BOLD_FGhist: $RED_BOLD_FGjobs:\j $STOP_COLORS "
 CYRANIX_PS1="$RED_FG[\t] $END_LINE$CYAN_FG\u$END_LINE$LIGHT_GRAY_BOLD_FG$END_LINE$GREEN_FG@\h$LIGHT_GRAY_BOLD_FG:$STOP_COLORS$LIGHT_GRAY_FG\w$END_LINE$LIGHT_GRAY_BOLD_FG\$$END_LINE$LIGHT_GRAY_FG$END_LINE "
 APACHE_PS1="\n$BLACK_BOLD_FG[$$:$PPID - \j:\!$BLACK_BOLD_FG]$CYAN_FG \T $BLACK_BOLD_FG[$BLUE_BOLD_FG\u@\H$BLACK_BOLD_FG:$LIGHT_GRAY_FG${SSH_TTY:-o} $RED_FG+${SHLVL}$BLACK_BOLD_FG] $LIGHT_GRAY_BOLD_FG\w$LIGHT_GRAY_FG \n$END_LINE$ "
 MINIMAL_PS1="$DARK_GRAY_BG$WHITE_FG[\d | \T -> \w ...\$?]\n#$END_LINE "
 MURICA_PS1="$BLUE_BG$WHITE_FG[\@] - \u$END_LINE$RED_FG@\h$ $END_LINE"
 FROG_PS1="$GREEN_FG\u@\h:$YELLOW_FG[\w$GREEN_FG$END_LINE]$ "
-
+BREEZY_PS1="$LIGHT_GRAY_BG$GREEN_BOLD_FG(\h - \t)$STOP_COLORS\n  $BLUE_BOLD_FG[\w]$ $END_LINE"
 
 
 #####################################################################
