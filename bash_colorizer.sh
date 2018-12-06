@@ -251,6 +251,9 @@ MINIMAL_PS1="$DARK_GRAY_BG$WHITE_FG[\d | \T -> \w ...\$?]\n#$END_LINE "
 MURICA_PS1="$BLUE_BG$WHITE_FG[\@] - \u$END_LINE$RED_FG@\h$ $END_LINE"
 FROG_PS1="$GREEN_FG\u@\h:$YELLOW_FG[\w$GREEN_FG$END_LINE]$ "
 BREEZY_PS1="$LIGHT_GRAY_BG$GREEN_BOLD_FG(\h - \t)$STOP_COLORS\n  $BLUE_BOLD_FG[\w]$ $END_LINE"
+DARKNESS_PS1="$BLUE_BG$RED_FG \@ $RED_BG$BLUE_BOLD_FG \u $STOP_COLORS\n$WHITE_FG\w -> $END_LINE"
+DARK_ELVES_PS1="$YELLOW_BOLD_FG[\u] $LIGHT_PURPLE_UL_FG\w$STOP_COLORS $CYAN_BOLD_FG(\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b)$END_LINE -> "
+DARK_DESCENT_PS1="$LIGHT_RED_FG\u$STOP_COLORS\n  $LIGHT_BLUE_FG\d, \@$STOP_COLORS\n    $LIGHT_GREEN_FG\w$STOP_COLORS $ $END_LINE"
 
 
 #####################################################################
@@ -276,9 +279,9 @@ Print_Choices() {
 	prompt_name=${prompt_name_long::${#prompt_name_long}-4}
 
 	if (( $choice < 9 )) ; then
-	    echo " $(($choice+1)) : ${prompt_name//_/ }"
+	    echo "   $(($choice+1)) : ${prompt_name//_/ }"
 	else
-	    echo "$(($choice+1)) : ${prompt_name//_/ }"
+	    echo "  $(($choice+1)) : ${prompt_name//_/ }"
 	fi
     done
 
@@ -292,16 +295,17 @@ Print_Choices
 while true
 do
     list_max=${#PS1_PROMPTS[@]}
-    read -p "Enter selection 1-$list_max " selection
+    read -p "Enter selection [1-$list_max]: " selection
     echo ""
     
     regex='^[0-9]+$'
     if ! [[ $selection =~ $regex ]] ; then
 	echo "ERROR: You can only enter a number!" >&2;
 	echo ""
+	Print_Choices
     else
 	if (( $selection > $list_max )) || (( $selection < 1 )) ; then
-	    echo "INVALID CHOICE, please chose a number between 1-$list_max"
+	    echo "INVALID CHOICE, please chose a number between [1-$list_max]"
 	    echo ""
 	    Print_Choices
 	else
@@ -320,8 +324,5 @@ PS1=${!PS1_CHOICE}
 echo ""
 echo "To make this permanent, put this in your ~/.bashrc:"
 echo ""
-echo "  export PS1=${!PS1_CHOICE}"
-echo ""
-echo "Your original PS1 was:"
-echo "             $PS1_ORIG"
+echo "  export PS1=\"${!PS1_CHOICE}\""
 echo ""
