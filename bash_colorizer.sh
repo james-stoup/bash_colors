@@ -254,6 +254,7 @@ BREEZY_PS1="$LIGHT_GRAY_BG$GREEN_BOLD_FG(\h - \t)$STOP_COLORS\n  $BLUE_BOLD_FG[\
 DARKNESS_PS1="$BLUE_BG$RED_FG \@ $RED_BG$BLUE_BOLD_FG \u $STOP_COLORS\n$WHITE_FG\w -> $END_LINE"
 DARK_ELVES_PS1="$YELLOW_BOLD_FG[\u] $LIGHT_PURPLE_UL_FG\w$STOP_COLORS $CYAN_BOLD_FG(\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b)$END_LINE -> "
 DARK_DESCENT_PS1="$LIGHT_RED_FG\u$STOP_COLORS\n  $LIGHT_BLUE_FG\d, \@$STOP_COLORS\n    $LIGHT_GREEN_FG\w$STOP_COLORS $ $END_LINE"
+BLUE_SKY_PS1="$BLUE_FG$WHITE_BG \u | \t | \h $STOP_COLORS\n$LIGHT_PURPLE_FG[ \w ]$END_LINE > "
 
 
 #####################################################################
